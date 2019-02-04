@@ -1,6 +1,6 @@
 # Bknodeui
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3. This ui runs on top of my blackjack node project. The goal was to learn a bit of angular development.
 
 ## Development server
 

@@ -1,0 +1,14 @@
+<div *ngIf="player">
+<h3>
+  <div><span>Player id:</span> {{player.playerId}}</div>
+  <div><span>State:</span>{{player.playerState}}</div>
+  <div><span>Hand Points:</span>{{player.points}}</div>
+</h3>
+<h4>Cards:</h4>
+<div class="cards">
+  <div class="card" *ngFor="let playedCard of player.cards" >
+        <span class="cardPoints">Points: {{playedCard.points}}</span>
+        <span><img src="{{getImageLocationFor(playedCard)}}"></span>
+    </div>
+</div>
+</div>

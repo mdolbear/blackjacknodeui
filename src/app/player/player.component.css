@@ -1,0 +1,17 @@
+img {
+    width: 100px;
+    height: 125px;
+}
+
+.card {
+    float: left;
+    width: 20%;
+    padding: 5px;
+  }
+  
+  /* Clear floats after image containers */
+  .cards::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

@@ -1,0 +1,24 @@
+
+<h2>
+    Game Controls:
+</h2>
+<div class="buttonDiv">
+    <span>
+        <label>Number of Players:</label>
+        <input type="number" [disabled]="shouldDisableCreateGame" (input)="numberOfPlayers = $event.target.value"/>
+        <button [disabled]="shouldDisableCreateGame" (click)="createNewGame(numberOfPlayers)">Create New Game</button>
+    </span>
+    <button [disabled]="shouldDisablePlayHand" (click)="playHand()">Play Hand</button>
+</div>
+<div *ngIf="game">
+    <h2>
+        <div><span>Game id:</span> {{game.gameId}}</div>
+        <div><span>State:</span>{{game.gameState}}</div>
+    </h2>
+    <h2>Players</h2>
+    <ul class="players">
+        <li *ngFor="let player of game.players" >
+            <app-player [player]="player"></app-player>
+        </li>
+    </ul>
+</div>
