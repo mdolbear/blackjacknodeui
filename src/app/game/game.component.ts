@@ -32,24 +32,28 @@ export class GameComponent implements OnInit {
    */
   public createNewGame(numberOfPlayers: number) {
 
-    this.initializeGameState();
+    if (!isNaN(numberOfPlayers)) {
+      
+      this.initializeGameState();
 
-    this.gameService.createCardDeck()
-        .subscribe((cardDeckResponse: any) => {
-            this.cardDeckId = cardDeckResponse['result'];
-        });
+      this.gameService.createCardDeck()
+          .subscribe((cardDeckResponse: any) => {
+              this.cardDeckId = cardDeckResponse['result'];
+          });
 
-    this.gameService.createGame(numberOfPlayers)
-        .subscribe((createGameResponse: any) => {
-            this.gameId = createGameResponse['result'];
+      this.gameService.createGame(numberOfPlayers)
+          .subscribe((createGameResponse: any) => {
+              this.gameId = createGameResponse['result'];
 
-            this.gameService.getGameState(this.gameId)
-            .subscribe((game: any) => {
-                    this.game = game.result;
-                    this.evaluateButtonAndFieldStates();
-              });
+              this.gameService.getGameState(this.gameId)
+              .subscribe((game: any) => {
+                      this.game = game.result;
+                      this.evaluateButtonAndFieldStates();
+                });
 
-        });
+          });
+
+        }
 
 
   }
