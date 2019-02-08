@@ -3,6 +3,7 @@ import { HttpClientModule, HttpClient, HttpHeaders }    from '@angular/common/ht
 import { Observable, of } from 'rxjs';
 import {BlackJackGame} from './blackjackgame';
 import { catchError} from 'rxjs/operators'
+import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ export class GameService {
   private client: HttpClient;
 
   //Constants
-  static readonly BASE_URL = "http://localhost:3000/";
+  static readonly BASE_URL = environment.serverUrl;
   static readonly CREATE_CARD_DECK_URL : string = GameService.BASE_URL 
             + "blackjack/createCardDeck";
   static readonly CREATE_GAME_URL : string = GameService.BASE_URL
