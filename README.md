@@ -2,6 +2,8 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3. This ui runs on top of my blackjack node project. The goal was to learn a bit of angular development.
 
+After starting 'ng serve' via the command line below, the debugging environment under VS code can be started by going to the "Debug Icon" on the sidebar, and then "Launch Chrome against local" by hitting the green debug arrow. The backend node js server must be started first along with mongo db.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
